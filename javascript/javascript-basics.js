@@ -283,3 +283,55 @@ console.log(
   'Release recommendation:',
   getReleaseRecommendation(releaseResults),
 );
+
+const regressionResults = [
+  {
+    name: 'Login',
+    status: 'passed',
+  },
+  {
+    name: 'Logout',
+    status: 'passed',
+  },
+  {
+    name: 'Profile update',
+    status: 'failed',
+  },
+  {
+    name: 'Device registration',
+    status: 'blocked',
+  },
+  {
+    name: 'Notification settings',
+    status: 'passed',
+  },
+];
+
+function summarizeTestResults(results) {
+  const summary = {
+    total: results.length,
+    passed: 0,
+    failed: 0,
+    blocked: 0,
+  };
+
+  for (const result of results) {
+    if (result.status === 'passed') {
+      summary.passed += 1;
+    } else if (result.status === 'failed') {
+      summary.failed += 1;
+    } else if (result.status === 'blocked') {
+      summary.blocked += 1;
+    }
+  }
+
+  summary.passRate =
+    (summary.passed / summary.total) * 100;
+
+  return summary;
+}
+
+const regressionSummary =
+  summarizeTestResults(regressionResults);
+
+console.log('Regression summary:', regressionSummary);
