@@ -8,7 +8,8 @@
     "test:headed": "playwright test --headed",
     "test:ui": "playwright test --ui",
     "report": "playwright show-report",
-    "js:basics": "node javascript/javascript-basics.js"
+    "js:basics": "node javascript/javascript-basics.js",
+    "test:api": "playwright test tests/api/posts.api.spec.js --project=chromium"
   },
   "keywords": [],
   "author": "",
