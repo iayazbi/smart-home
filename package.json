@@ -9,7 +9,8 @@
     "test:ui": "playwright test --ui",
     "report": "playwright show-report",
     "js:basics": "node javascript/javascript-basics.js",
-    "test:api": "playwright test tests/api/posts.api.spec.js --project=chromium"
+    "test:api": "playwright test tests/api/posts.api.spec.js --project=chromium",
+    "test:lesson4": "playwright test tests/api/microservices.api.spec.js --project=chromium --workers=1"
   },
   "keywords": [],
   "author": "",
